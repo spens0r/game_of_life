@@ -1,5 +1,8 @@
 require "bundler/setup"
+require "pry"
 require "game_of_life"
+require "game_of_life/cell"
+require "game_of_life/universe"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
