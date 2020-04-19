@@ -1,9 +1,9 @@
 class Universe
-  attr_reader :cells
+  attr_reader :cells, :width, :height
 
-  def initialize(length, width, cells)
-    @length = length
+  def initialize(width, height, cells)
     @width = width
+    @height = height
     @cells = cells
     @grid = compute_grid
   end
@@ -19,7 +19,7 @@ class Universe
   end
 
   def compute_grid
-    grid = Array.new(@length) { Array.new(@width) }
+    grid = Array.new(@width) { Array.new(@height) }
     @cells.each do |cell|
       grid[cell.x][cell.y] = cell
     end
