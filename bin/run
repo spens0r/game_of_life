@@ -3,13 +3,8 @@
 require "bundler/setup"
 require "game_of_life"
 
-cell = Cell.alive(1,1)
-neigh1 = Cell.alive(0,1)
-neigh2 = Cell.alive(1,0)
-neigh3 = Cell.alive(2,1)
-neigh4 = Cell.alive(1,2)
-u = Universe.new(3, 3, [cell, neigh1, neigh2, neigh3, neigh4])
+universe = PatternReader.universe_from_pattern_file("patterns/gosper_glider.txt")
 
-renderer = TerminalRenderer.new(u)
+renderer = TerminalRenderer.new(universe)
 
 renderer.render_simulation

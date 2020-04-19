@@ -14,7 +14,7 @@ class TerminalRenderer
     loop do
       draw_frame(window, @universe.cells)
       @universe.tick
-      sleep 1
+      sleep 0.1
     end
 
     win.close
